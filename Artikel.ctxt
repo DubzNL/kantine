@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=naamArtikel\ prijsArtikel
+comment0.target=Artikel(java.lang.String,\ java.lang.String)
+comment0.text=\r\n\ Geeft\ een\ naam\ en\ prijs\ wanneer\ het\ object\ aangemaakt\ wordt.\r\n
+comment1.params=naamArtikel
+comment1.target=void\ setNaam(java.lang.String)
+comment1.text=\r\n\ Wijzig\ de\ naam\ van\ het\ artikel\r\n
+comment2.params=prijsArtikel
+comment2.target=void\ setPrijs(java.lang.String)
+comment2.text=\r\n\ Wijzig\ de\ prijs\ van\ het\ artikel.\r\n
+comment3.params=
+comment3.target=java.lang.String\ getNaam()
+comment3.text=\r\n\ Geeft\ de\ naam\ van\ het\ artikel\ weer.\r\n
+numComments=4
