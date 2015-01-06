@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=naam\ prijs
+comment0.target=Artikel(java.lang.String,\ double)
+comment0.text=\r\n\ Geeft\ een\ naam\ en\ prijs\ wanneer\ het\ object\ aangemaakt\ wordt.\r\n
+comment1.params=
+comment1.target=Artikel()
+comment1.text=\r\n\ Parameterloze\ constructor\ van\ het\ object\r\n
+comment2.params=naamArtikel
+comment2.target=void\ setNaam(java.lang.String)
+comment2.text=\r\n\ Wijzig\ de\ naam\ van\ het\ artikel\r\n
+comment3.params=prijsArtikel
+comment3.target=void\ setPrijs(double)
+comment3.text=\r\n\ Wijzig\ de\ prijs\ van\ het\ artikel.\r\n
+comment4.params=
+comment4.target=double\ getPrijs()
+comment4.text=\r\n\ Geeft\ de\ prijs\ van\ het\ artikel\ weer.\r\n
+comment5.params=
+comment5.target=java.lang.String\ getNaam()
+comment5.text=\r\n\ Geeft\ de\ naam\ van\ het\ artikel\ weer.\r\n
+comment6.params=
+comment6.target=void\ printInfo()
+comment6.text=\r\n\ Print\ functie\ van\ alle\ gegevens\ van\ het\ artikel.\ \r\n
+numComments=7
