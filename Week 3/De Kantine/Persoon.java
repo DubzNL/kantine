@@ -205,9 +205,10 @@ public class Persoon
         System.out.println("Geslacht: " + getGeslacht());
     }
     
-    /** 
-     * Methode om dienblad te koppelen aan een persoon 
-     * @param dienblad */ 
+   /** 
+    * Methode om dienblad te koppelen aan een persoon 
+    * @param dienblad 
+    */ 
    public void pakDienblad() 
    {    
        this.dienblad = new Dienblad();
@@ -250,8 +251,9 @@ public class Persoon
         }
         return tempAantal;
    }
-   /*
-    *   
+   /**
+    *   Methode om de klasse dienblad op te roepen.
+    *   @return dienblad
     */
       public Dienblad getDienblad()
    {

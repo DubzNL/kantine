@@ -13,5 +13,5 @@ comment3.target=double\ getTotaalPrijs()
 comment3.text=\ \ \ \ \ \r\n\ Methode\ om\ de\ totaalprijs\ van\ de\ artikelen\ \ \ \ \ \ \r\n\ op\ dienblad\ uit\ te\ rekenen\ \ \ \ \ \r\n\ @return\ De\ totaalprijs\ \ \ \ \ \r\n
 comment4.params=
 comment4.target=java.util.Iterator\ getArtikelIterator()
-comment4.text=\r\n\ \ De\ Iterator\ om\ door\ de\ artikelen\ op\ het\ dienblad\ te\ lopen\r\n
+comment4.text=\r\n\ \ De\ Iterator\ om\ door\ de\ artikelen\ op\ het\ dienblad\ te\ lopen\r\n\ \ @return\ artikelen.iterator()\r\n
 numComments=5
