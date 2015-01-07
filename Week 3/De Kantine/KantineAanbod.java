@@ -24,11 +24,11 @@ public class KantineAanbod {
         }
     }
 
-    /*
-     * Private methode om de lijst van artikelen te krijgen op basis van de    
+    /**
+     * Public methode om de lijst van artikelen te krijgen op basis van de    
      * naam van het artikel. Retourneert null als artikel niet bestaat.
      */
-    private ArrayList<Artikel> getArrayList(String productnaam) {
+    public ArrayList<Artikel> getArrayList(String productnaam) {
          return aanbod.get(productnaam); 
     }
 

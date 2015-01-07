@@ -12,6 +12,6 @@ comment3.params=
 comment3.target=Kassa\ getKassa()
 comment4.params=
 comment4.target=KantineAanbod\ getKantineAanbod()
-comment5.params=artikelnaam\ prijs\ hoeveelHeid
+comment5.params=artikelnamen\ artikelprijzen\ hoeveelheden
 comment5.target=void\ setKantineAanbod(java.lang.String[],\ double[],\ int[])
 numComments=6
