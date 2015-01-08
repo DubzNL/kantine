@@ -1,14 +1,23 @@
 public class Administratie {
-  /**
+  private final static int DAYS_IN_WEEK = 7;
+      /**
+     * Lege private constructor
+     */
+  private Administratie()
+  {
+      //Leeg
+  }  
+    
+    /**
    * Deze methode berekent van de int array aantal de 
    * gemiddelde waarde
    * @param aantal
    * @return het gemiddelde
    */
-  public double berekenGemiddeldAantal(int[] aantal) 
+  public static double berekenGemiddeldAantal(int[] aantal) 
   {
       int arrayOpsomming=0;
-      int returnwaarde;
+      double returnwaarde;
       if( aantal == null)
       {
           returnwaarde = 0;
@@ -25,7 +34,7 @@ public class Administratie {
           {
               arrayOpsomming += arrayWaarde;  
           }
-          returnwaarde = arrayOpsomming / lengte;
+          returnwaarde = (double)arrayOpsomming / (double)lengte;
         }
       return returnwaarde;
   }
@@ -36,7 +45,7 @@ public class Administratie {
    * @param omzet
    * @return Het gemiddelde
    */
-  public double berekenGemiddeldeOmzet(double[] omzet) 
+  public static double berekenGemiddeldeOmzet(double[] omzet) 
   {
       double arrayOpsomming=0;
       double returnwaarde;
@@ -60,4 +69,35 @@ public class Administratie {
         }
       return returnwaarde;
   }
+  
+  /**
+   * Methode om dagomzet uit te rekenen
+   * @param omzet
+   * @return array (7 elementen) met dagomzetten
+   */
+  
+    public static double[] berekenDagOmzet(double[] omzet)
+  {
+      double lengte = omzet.length;
+      double[] temp=new double[DAYS_IN_WEEK];
+      int j=0;
+      int k=0;
+      while (lengte > 0)
+      {
+          temp[j] += omzet[k];
+          k++;
+          lengte--;
+          if (j==6)
+          {
+              j=0;
+          }
+          else
+          {
+              j++;
+          }
+      }
+      
+      return temp;
+  }
+  
 }
