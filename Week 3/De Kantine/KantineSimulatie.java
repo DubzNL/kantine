@@ -110,7 +110,7 @@ public class KantineSimulatie
                 int[] tePakken=getRandomArray(AANTAL_ARTIKELEN, 0, AANTAL_ARTIKELEN-1);
                 String[] artikelen=geefArtikelNamen(tePakken);
                 kantine.loopPakSluitAan(persoon, artikelen);
-                updateArtikelVoorraad(artikelen);
+                //updateArtikelVoorraad(artikelen);
             }
             
             kantine.verwerkRijVoorKassa();
@@ -122,22 +122,6 @@ public class KantineSimulatie
             System.out.println("Aantal artikelen verkocht: "+ kantine.getKassa().getAantalArtikelen());
             System.out.println("");
             kantine.getKassa().resetKassa();
-        }
-    }
-    
-    /**
-     * Methode voor het updaten van de voorraad
-     */
-    private void updateArtikelVoorraad(String[] artikelen)
-    {
-        for(String artikel : artikelen)
-        {
-            // Check of voorraad onder minimum voorraad ligt
-            if(kantine.getKantineAanbod().getArrayList(artikel).size() < MIN_ARTIKELEN_PER_SOORT)
-            {
-                // Verhoog de voorraad aan in KantineAanbod 
-                
-            }
         }
     }
 }
