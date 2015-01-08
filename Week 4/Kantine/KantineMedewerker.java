@@ -12,9 +12,9 @@ public class KantineMedewerker extends Persoon
     /**
      * Constructor voor de subklasse Kantinemedewerker
      */
-    public KantineMedewerker(boolean kassaToegang, String persoonBurgerServiceNummer, String persoonVoornaam, String persoonAchternaam, int persoonGeboorteDag, int persoonGeboorteMaand, int persoonGeboorteJaar, char persoonGeslacht)
+    public KantineMedewerker(boolean kassaToegang, int persoonBurgerServiceNummer, String persoonVoornaam, String persoonAchternaam, int persoonGeboorteDag, int persoonGeboorteMaand, int persoonGeboorteJaar, char persoonGeslacht)
     {
-       super(persoonBurgerServiceNummer, persoonVoornaam, persoonAchternaam, persoonGeboorteDag, persoonGeboorteMaand, persoonGeboorteJaar, persoonGeslacht);
+       super(persoonVoornaam, persoonAchternaam, persoonGeboorteDag, persoonGeboorteMaand, persoonGeboorteJaar, persoonGeslacht, persoonBurgerServiceNummer);
        this.kassaToegang = kassaToegang;
     }
     /**

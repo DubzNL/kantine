@@ -13,9 +13,9 @@ public class Docent extends Persoon
     /**
      * Constructor voor de subklasse Docent 
      */
-    public Docent(String afkorting, String afdeling, String persoonBurgerServiceNummer, String persoonVoornaam, String persoonAchternaam, int persoonGeboorteDag, int persoonGeboorteMaand, int persoonGeboorteJaar, char persoonGeslacht)
+    public Docent(String afkorting, String afdeling, int persoonBurgerServiceNummer, String persoonVoornaam, String persoonAchternaam, int persoonGeboorteDag, int persoonGeboorteMaand, int persoonGeboorteJaar, char persoonGeslacht)
     {
-        super(persoonBurgerServiceNummer, persoonVoornaam, persoonAchternaam, persoonGeboorteDag, persoonGeboorteMaand, persoonGeboorteJaar, persoonGeslacht);
+        super(persoonVoornaam, persoonAchternaam, persoonGeboorteDag, persoonGeboorteMaand, persoonGeboorteJaar, persoonGeslacht, persoonBurgerServiceNummer);
         this.afkorting = afkorting;
         this.afdeling = afdeling;
     }

@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=kassaToegang\ persoonBurgerServiceNummer\ persoonVoornaam\ persoonAchternaam\ persoonGeboorteDag\ persoonGeboorteMaand\ persoonGeboorteJaar\ persoonGeslacht
+comment0.target=KantineMedewerker(boolean,\ int,\ java.lang.String,\ java.lang.String,\ int,\ int,\ int,\ char)
+comment0.text=\r\n\ Constructor\ voor\ de\ subklasse\ Kantinemedewerker\r\n
+comment1.params=
+comment1.target=KantineMedewerker()
+comment1.text=\r\n\ Parameterloze\ constructor\ voor\ een\ object\ van\ de\ subklasse\ KantineMedewerker\r\n
+comment2.params=kassaToegang
+comment2.target=void\ setKassaToegang(boolean)
+comment2.text=\r\n\ Methode\ voor\ het\ aanpassen\ van\ KassaToegang.\r\n
+comment3.params=
+comment3.target=boolean\ getKassatoegang()
+comment3.text=\r\n\ Methode\ voor\ het\ krijgen\ van\ de\ waarde\ van\ Kassatoegang\r\n\ @return\ kassaToegang\r\n
+comment4.params=
+comment4.target=void\ drukAf()
+comment4.text=\r\n\ Print\ gegevens\ KantineMedewerker\r\n
+numComments=5
