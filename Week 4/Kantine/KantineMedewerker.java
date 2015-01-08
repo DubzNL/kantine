@@ -49,4 +49,11 @@ public class KantineMedewerker extends Persoon
     {
         System.out.println("Kassatoegang:"+ getKassatoegang());
     }
+    /**
+     * String toString methode
+     */
+    public String toString()
+    {
+        return "Kassatoegang:"+ getKassatoegang();
+    }
 }
