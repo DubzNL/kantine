@@ -5,7 +5,7 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class KantineMedewerker extends Persoon
+public class KantineMedewerker extends Persoon implements KortingskaartHouder
 {
     private boolean kassaToegang;
     
@@ -17,14 +17,37 @@ public class KantineMedewerker extends Persoon
        super(persoonVoornaam, persoonAchternaam, persoonGeboorteDag, persoonGeboorteMaand, persoonGeboorteJaar, persoonGeslacht, persoonBurgerServiceNummer);
        this.kassaToegang = kassaToegang;
     }
+    
     /**
-     * Parameterloze constructor voor een object van de subklasse KantineMedewerker
+     * constructor voor een object van de subklasse KantineMedewerker
      */
     public KantineMedewerker()
     {
         super();
         kassaToegang = false;
     }
+     /**
+     * methode voor het kortingspercentage te geven
+     */
+    public double geefKortingsPercentage()
+    {
+        return 0.35;
+    }
+     /** 
+     *  methode om op te vragen of er maximum per keer aan de korting zit
+     */
+    public boolean heeftMaximum()
+    {
+        return false;
+    }
+    /**
+     * methode om het maximum kortingsbedrag op te vragen
+     */
+    public double geefMaximum()
+    {
+        return 0.0;
+    }
+    
     /**
     * Methode voor het aanpassen van KassaToegang.
     */

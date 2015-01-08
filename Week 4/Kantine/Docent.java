@@ -5,7 +5,7 @@
  * @versie 8-1-2014
  */
 
-public class Docent extends Persoon
+public class Docent extends Persoon implements KortingskaartHouder
 {
     private String afdeling;
     private String afkorting;
@@ -18,6 +18,27 @@ public class Docent extends Persoon
         super(persoonVoornaam, persoonAchternaam, persoonGeboorteDag, persoonGeboorteMaand, persoonGeboorteJaar, persoonGeslacht, persoonBurgerServiceNummer);
         this.afkorting = afkorting;
         this.afdeling = afdeling;
+    }
+    /**
+     * methode voor het kortingspercentage te geven
+     */
+    public double geefKortingsPercentage()
+    {
+        return 0.25;
+    }
+    /** 
+     *  methode om op te vragen of er maximum per keer aan de korting zit
+     */
+    public boolean heeftMaximum()
+    {
+        return true;
+    }
+    /**
+     * methode om het maximum kortingsbedrag op te vragen
+     */
+    public double geefMaximum()
+    {
+        return 1.0;
     }
     
     /**

@@ -197,7 +197,7 @@ public class Persoon
      * Print functie van alle informatie over de persoon.
      * BSN, Naam, Geboortedatum en geslacht.
      */
-    public void printInfo()
+    public void drukAf()
     {
         System.out.println("Naam: " + voornaam + " " + achternaam);
         System.out.println("BSN: " + bsn);
