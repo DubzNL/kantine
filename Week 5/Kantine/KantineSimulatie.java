@@ -39,6 +39,14 @@ public class KantineSimulatie
     private static final int MIN_ARTIKELEN_PER_PERSOON=1;
     private static final int MAX_ARTIKELEN_PER_PERSOON=4;
     
+     // Kans op soort persoon
+    private static final int STUDENT_KANS = 89;
+    private static final int DOCENT_KANS = 10;
+    
+    private static final String[] namenVanKlassen = new String[] {"Docent",  "KantineMedewerker", "Student"};
+
+    private int[] personenBinnen;
+    
     /**
      * Constructor
      */
@@ -101,18 +109,24 @@ public class KantineSimulatie
     
     public void simuleer(int dagen) 
     {
+        
+        //array met aantal artikelen per dag.
+        int[] aantal = new int[dagen];
+        //array met omzet per dag.
+        double[] omzet = new double[dagen];
+        
         for(int i=0;i<dagen;i++) {
             int aantalPersonen= getRandomValue(MIN_PERSONEN_PER_DAG, MAX_PERSONEN_PER_DAG);
-            
+            personenBinnen = new int[namenVanKlassen.length];
             for(int j=0;j<aantalPersonen;j++) {
-                Persoon persoon = new Persoon();
-                persoon.pakDienblad();
+                Persoon persoon = genereerPersoon();
+                verwerkPersoon(persoon);
                 int[] tePakken=getRandomArray(AANTAL_ARTIKELEN, 0, AANTAL_ARTIKELEN-1);
                 String[] artikelen=geefArtikelNamen(tePakken);
                 kantine.loopPakSluitAan(persoon, artikelen);
                 updateArtikelVoorraad(artikelen);
             }
-            
+            printPersoonTotaal();
             kantine.verwerkRijVoorKassa();
             DecimalFormat df = new DecimalFormat("#.##");
             int dag = i + 1;
@@ -121,6 +135,14 @@ public class KantineSimulatie
             System.out.println("Totaal geld: " + df.format(kantine.getKassa().hoeveelheidGeldInKassa()));
             System.out.println("Aantal artikelen verkocht: "+ kantine.getKassa().getAantalArtikelen());
             System.out.println("");
+
+            //dagtotalen aan arrays toevoegen.
+            aantal[i] = kantine.getKassa().getAantalArtikelen();
+            omzet[i] = kantine.getKassa().hoeveelheidGeldInKassa();
+            
+            System.out.println("Gemiddelde aantal artikelen per dag: " + Administratie.berekenGemiddeldAantal(aantal));         
+            System.out.println("Gemiddelde omzet per dag: " + df.format(Administratie.berekenGemiddeldeOmzet(omzet)));
+            
             kantine.getKassa().resetKassa();
         }
     }
@@ -138,6 +160,53 @@ public class KantineSimulatie
                 // Verhoog de voorraad aan in KantineAanbod 
                 
             }
+        }
+    }
+    
+     private Persoon genereerPersoon() {
+        int kans = getRandomValue(0, 100);
+        Persoon persoon;
+            if(kans <= STUDENT_KANS) {
+                persoon = new Student();
+            } else if (kans <= (STUDENT_KANS + DOCENT_KANS)) {
+                persoon = new Docent();
+            } else {
+                persoon = new KantineMedewerker();
+            }
+        Dienblad dienblad = new Dienblad();
+        persoon.pakDienblad(dienblad);
+        int aantalartikelen=getRandomValue(MIN_ARTIKELEN_PER_PERSOON, MAX_ARTIKELEN_PER_PERSOON);
+        int[] tepakken=getRandomArray(aantalartikelen, 0, AANTAL_ARTIKELEN-1);
+        String[] artikelen=geefArtikelNamen(tepakken);
+        kantine.loopPakSluitAan(persoon, artikelen);
+        return persoon;
+    }
+    
+    private void verwerkPersoon(Persoon persoon)
+    {
+        
+        if(persoon instanceof Docent)
+        {
+            //System.out.println("Dit is een Docent");
+            personenBinnen[0]++;
+        }
+        else if(persoon instanceof KantineMedewerker)
+        {
+            //System.out.println("Dit is een KantineMedewerker");
+            personenBinnen[1]++;
+        }
+        else if(persoon instanceof Student)
+        {
+            //System.out.println("Dit is een Student");
+            personenBinnen[2]++;
+        }
+    }
+    private void printPersoonTotaal()
+    {
+        System.out.println("Personen die hebben bezocht");
+        for(int i = 0 ; i< namenVanKlassen.length ; i++)
+        {
+            System.out.println(namenVanKlassen[i] + ": " + personenBinnen[i]);
         }
     }
 }

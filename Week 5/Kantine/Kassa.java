@@ -27,13 +27,27 @@ public class Kassa
     public void rekenAf(Persoon persoon) 
     {
         Iterator<Artikel> artikelen = persoon.getDienblad().getArtikelIterator();
+        double totaalPrijs = 0;
         while(artikelen.hasNext())
         {
             Artikel artikel = artikelen.next();
-            hoeveelheidGeld += artikel.getPrijs();
+            totaalPrijs += artikel.getPrijs();
             aantalArtikelen++;
 
         }
+        
+        if(persoon instanceof KortingskaartHouder)
+        {
+            KortingskaartHouder kortingPersoon = (KortingskaartHouder) persoon;
+            double kortingInEuros = totaalPrijs * kortingPersoon.geefKortingsPercentage();
+            if(kortingPersoon.heeftMaximum()&&kortingPersoon.geefMaximum()<kortingInEuros)
+            {
+                kortingInEuros = kortingPersoon.geefMaximum();
+            }
+            totaalPrijs = totaalPrijs - kortingInEuros;
+            System.out.println("Deze persoon heeft " + kortingInEuros + " korting gekregen");
+        }
+        hoeveelheidGeld += totaalPrijs;
     }
     
     /**
