@@ -20,7 +20,7 @@ public class Administratie {
       double returnwaarde;
       if( aantal == null)
       {
-          returnwaarde = 0;
+          return 0;
       }
       int lengte = aantal.length;
       if (lengte == 0)

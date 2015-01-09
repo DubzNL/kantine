@@ -114,6 +114,7 @@ public class KantineSimulatie
         int[] aantal = new int[dagen];
         //array met omzet per dag.
         double[] omzet = new double[dagen];
+        DecimalFormat df = new DecimalFormat("#.##");
         
         for(int i=0;i<dagen;i++) {
             int aantalPersonen= getRandomValue(MIN_PERSONEN_PER_DAG, MAX_PERSONEN_PER_DAG);
@@ -128,7 +129,6 @@ public class KantineSimulatie
             }
             printPersoonTotaal();
             kantine.verwerkRijVoorKassa();
-            DecimalFormat df = new DecimalFormat("#.##");
             int dag = i + 1;
             System.out.println("Dag: " + dag + "");
             System.out.println("Aantal klanten: " + aantalPersonen);
@@ -140,11 +140,12 @@ public class KantineSimulatie
             aantal[i] = kantine.getKassa().getAantalArtikelen();
             omzet[i] = kantine.getKassa().hoeveelheidGeldInKassa();
             
-            System.out.println("Gemiddelde aantal artikelen per dag: " + Administratie.berekenGemiddeldAantal(aantal));         
-            System.out.println("Gemiddelde omzet per dag: " + df.format(Administratie.berekenGemiddeldeOmzet(omzet)));
             
             kantine.getKassa().resetKassa();
         }
+        
+        System.out.println("Gemiddelde aantal artikelen per dag: " + Administratie.berekenGemiddeldAantal(aantal));         
+        System.out.println("Gemiddelde omzet per dag: " + df.format(Administratie.berekenGemiddeldeOmzet(omzet)));
     }
     
     /**
