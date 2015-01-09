@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.params=studentNummer\ studieRichting\ BurgerServiceNummer\ voornaam\ achternaam\ geboortedag\ geboortemaand\ geboortejaar\ geslacht\ bsn
+comment0.target=Student(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ int,\ int,\ int,\ char,\ int)
+comment0.text=\r\n\ Constructor\ voor\ de\ subklasse\ student\r\n
+comment1.params=
+comment1.target=Student()
+comment2.params=studentNummer
+comment2.target=void\ setstudentNummer(java.lang.String)
+comment2.text=\r\n\ Methode\ voor\ het\ aanpassen\ van\ StudentNummer\r\n
+comment3.params=studieRichting
+comment3.target=void\ setStudieRichting(java.lang.String)
+comment3.text=\r\n\ Methode\ voor\ het\ aanpassen\ van\ StudieRichting\r\n
+comment4.params=
+comment4.target=java.lang.String\ getStudentNummer()
+comment4.text=\r\n\ \ Methode\ voor\ het\ verkrijgen\ van\ het\ studentNummer\ van\ de\ student\r\n\ \ @return\ studentnummer\r\n
+comment5.params=
+comment5.target=java.lang.String\ getStudieRichting()
+comment5.text=\r\n\ Methode\ voor\ het\ verkrijgen\ van\ de\ studie\ richting\ van\ de\ student\r\n\ @return\ studierichting\r\n
+comment6.params=
+comment6.target=void\ drukAf()
+comment6.text=\r\n\ print\ gegevens\ student,\ Dit\ zijn\ StudentNummer\ en\ StudieRichting\r\n
+numComments=7

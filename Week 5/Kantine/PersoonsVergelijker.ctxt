@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=PersoonsVergelijker()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ PersoonsVergelijker\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment1.text=\r\n\ \ Static\ methode\ voor\ het\ maken\ van\ twee\ 'identieke'\ personen\r\n\ \r\n
+numComments=2
