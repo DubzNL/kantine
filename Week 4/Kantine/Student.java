@@ -21,8 +21,8 @@ public class Student extends Persoon
     public Student()
     {
         super();
-        studentNummer = "123";
-        studieRichting = "Informatica";
+        studentNummer = "";
+        studieRichting = "";
     }
     
     /**
@@ -51,7 +51,7 @@ public class Student extends Persoon
     }
     
     /**
-     * Methode voor het verkrijgen van het studentRichting van de student
+     * Methode voor het verkrijgen van de studie richting van de student
      * @return studierichting
      */
     public String getStudieRichting()

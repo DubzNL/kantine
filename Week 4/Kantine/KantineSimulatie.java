@@ -39,6 +39,10 @@ public class KantineSimulatie
     private static final int MIN_ARTIKELEN_PER_PERSOON=1;
     private static final int MAX_ARTIKELEN_PER_PERSOON=4;
     
+    // Kans op soort persoon
+    private static final int STUDENT_KANS = 89;
+    private static final int DOCENT_KANS = 10;
+    
     /**
      * Constructor
      */
@@ -101,6 +105,10 @@ public class KantineSimulatie
     
     public void simuleer(int dagen) 
     {
+        //array met aantal artikelen per dag.
+        int[] aantal = new int[dagen];
+        //array met omzet per dag.
+        double[] omzet = new double[dagen];
         for(int i=0;i<dagen;i++) {
             int aantalPersonen= getRandomValue(MIN_PERSONEN_PER_DAG, MAX_PERSONEN_PER_DAG);
             
@@ -120,7 +128,13 @@ public class KantineSimulatie
             System.out.println("Aantal klanten: " + aantalPersonen);
             System.out.println("Totaal geld: " + df.format(kantine.getKassa().hoeveelheidGeldInKassa()));
             System.out.println("Aantal artikelen verkocht: "+ kantine.getKassa().getAantalArtikelen());
-            System.out.println("");
+            
+            //dagtotalen aan arrays toevoegen.
+            aantal[i] = kantine.getKassa().getAantalArtikelen();
+            omzet[i] = kantine.getKassa().hoeveelheidGeldInKassa();
+            
+            System.out.println("Gemiddelde aantal artikelen per dag: " + Administratie.berekenGemiddeldAantal(aantal));         
+            System.out.println("Gemiddelde omzet per dag: " + df.format(Administratie.berekenGemiddeldeOmzet(omzet)));
             kantine.getKassa().resetKassa();
         }
     }
@@ -139,5 +153,26 @@ public class KantineSimulatie
                 
             }
         }
+    }
+    
+    /**
+     * Creeërt een persoon en verwerkt deze. Vervolgens sluit hij achteraan in de rij.
+     */
+    private void genereerPersoon() {
+        int kans = getRandomValue(0, 100);
+        Persoon persoon;
+        if(kans <= STUDENT_KANS) {
+            persoon = new Student();
+        } else if (kans <= (STUDENT_KANS + DOCENT_KANS)) {
+            persoon = new Docent();
+        } else {
+            persoon = new KantineMedewerker();
+        }
+        Dienblad dienblad = new Dienblad();
+        persoon.pakDienblad();
+        int aantalartikelen=getRandomValue(MIN_ARTIKELEN_PER_PERSOON, MAX_ARTIKELEN_PER_PERSOON);
+        int[] tepakken=getRandomArray(aantalartikelen, 0, AANTAL_ARTIKELEN-1);
+        String[] artikelen=geefArtikelNamen(tepakken);
+        kantine.loopPakSluitAan(persoon, artikelen);
     }
 }
