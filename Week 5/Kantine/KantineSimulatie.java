@@ -175,11 +175,6 @@ public class KantineSimulatie
                 persoon = new KantineMedewerker();
             }
         Dienblad dienblad = new Dienblad();
-        persoon.pakDienblad(dienblad);
-        int aantalartikelen=getRandomValue(MIN_ARTIKELEN_PER_PERSOON, MAX_ARTIKELEN_PER_PERSOON);
-        int[] tepakken=getRandomArray(aantalartikelen, 0, AANTAL_ARTIKELEN-1);
-        String[] artikelen=geefArtikelNamen(tepakken);
-        kantine.loopPakSluitAan(persoon, artikelen);
         return persoon;
     }
     
