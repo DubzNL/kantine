@@ -43,7 +43,25 @@ public class Persoon
         this.geslacht = geslacht;
         this.bsn = bsn;
     }
-
+    
+    /** 
+     * Methode voor het vergelijken van twee objecten van de klasse
+     * Persoon of deze gelijk aan elkaar zijn.
+     */
+    public boolean equals(Object object)
+    {
+        if (object instanceof Persoon){
+            Persoon vergelekenPersoon = (Persoon) object;
+            return bsn == vergelekenPersoon.bsn &&
+            voornaam == vergelekenPersoon.voornaam &&
+            achternaam == vergelekenPersoon.achternaam;
+        }
+        else
+        {
+            return false;
+        }
+    }
+  
     /**
      * Voeg een voornaam toe aan de persoon.
      */

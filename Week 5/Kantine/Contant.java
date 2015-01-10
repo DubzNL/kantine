@@ -12,5 +12,6 @@ public class Contant extends Betaalwijze
      */
     public boolean betaal(double tebetalen){
         // omitted
+        return false; // nog aanpassen!
     }
 }
