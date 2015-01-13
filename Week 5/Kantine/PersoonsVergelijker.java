@@ -26,7 +26,7 @@ public class PersoonsVergelijker
     {   
         persoon=new Persoon("persoon","achternaam",01,05,1990,'m',1212); 
         identiekePersoon=new Persoon("persoon","achternaam",01,05,1990,'m',1212); 
-           
+            
         if(persoon == identiekePersoon)
         {
             System.out.println("persoon == identiekePersoon");

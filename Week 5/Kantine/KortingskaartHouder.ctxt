@@ -5,4 +5,6 @@ comment1.params=
 comment1.target=boolean\ heeftMaximum()
 comment2.params=
 comment2.target=double\ geefMaximum()
-numComments=3
+comment3.params=
+comment3.target=double\ doeNiks()
+numComments=4
