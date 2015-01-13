@@ -48,6 +48,25 @@ public class Kassa
             System.out.println("Deze persoon heeft " + kortingInEuros + " korting gekregen");
         }
         hoeveelheidGeld += totaalPrijs;
+        
+        Betaalwijze persoonBetaalwijze = persoon.getBetaalwijze();
+        if (persoonBetaalwijze instanceof Pinpas){
+            if(persoonBetaalwijze.betaal(totaalPrijs)){
+                hoeveelheidGeld += totaalPrijs;
+                System.out.println("Betaald");
+            }
+            else {
+                System.out.println("Sorry, geen kredietlimiet gevonden");
+                System.out.println(persoonBetaalwijze.getSaldo());
+            }
+        }
+        else{
+            if (persoonBetaalwijze.betaal(totaalPrijs)){
+                hoeveelheidGeld += totaalPrijs;
+            } else {
+                System.out.println("Niet genoeg geld");
+            }    
+        }
     }
     
     /**

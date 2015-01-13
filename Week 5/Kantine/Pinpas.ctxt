@@ -1,8 +1,11 @@
 #BlueJ class context
 comment0.params=kredietlimiet
 comment0.target=void\ setKredietLimiet(double)
-comment0.text=\r\n\ Methode\ om\ redietlimiet\ te\ zetten\r\n\ @param\ kredietlimiet\r\n
-comment1.params=tebetalen
-comment1.target=boolean\ betaal(double)
-comment1.text=\r\n\ Methode\ om\ betaling\ af\ te\ handelen\r\n
-numComments=2
+comment0.text=\r\n\ Methode\ om\ kredietlimiet\ te\ zetten\r\n\ @param\ kredietlimiet\r\n
+comment1.params=
+comment1.target=double\ getKredietLimiet()
+comment1.text=\r\n\ methode\ om\ kredietlimiet\ op\ te\ vragen\r\n
+comment2.params=tebetalen
+comment2.target=boolean\ betaal(double)
+comment2.text=\r\n\ Methode\ om\ betaling\ af\ te\ handelen\r\n
+numComments=3

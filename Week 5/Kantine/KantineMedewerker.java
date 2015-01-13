@@ -5,7 +5,7 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class KantineMedewerker extends Persoon implements KortingskaartHouder, test
+public class KantineMedewerker extends Persoon implements KortingskaartHouder
 {
     private boolean kassaToegang;
     

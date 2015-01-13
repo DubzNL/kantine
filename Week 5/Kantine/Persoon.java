@@ -18,6 +18,10 @@ public class Persoon
     private Dienblad dienblad;
     private int aantalArtikelen;
     private double totaalPrijs;
+    private Betaalwijze betaalwijze;
+    private Contant contant;
+    private Pinpas pinpas;
+
 
     /**
      * Parameterloze constructor voor objecten van de klasse Persoon
@@ -241,6 +245,23 @@ public class Persoon
        return dienblad;
     }
    
+   public Betaalwijze getBetaalwijze(){
+       return betaalwijze;
+   }
+    
+   public void setBetaalwijze(double saldo){
+       betaalwijze.setSaldo(saldo);
+   }
+    
+   public Pinpas getPinpas()
+   {
+       return pinpas;
+   }
+    
+   public void newPinpas(int kredietlimiet){
+       pinpas = new Pinpas();
+       pinpas.setKredietLimiet(kredietlimiet);
+   }
 }
         
 
