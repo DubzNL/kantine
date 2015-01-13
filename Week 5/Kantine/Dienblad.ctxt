@@ -6,6 +6,6 @@ comment1.params=naam
 comment1.target=void\ voegToe(Artikel)
 comment1.text=\ \ \ \ \ \r\n\ Methode\ om\ artikel\ aan\ dienblad\ toe\ te\ voegen\ \r\n\ @param\ artikel\ \ \ \ \ \r\n
 comment2.params=
-comment2.target=java.util.Iterator\ getArtikelIterator()
+comment2.target=java.util.Iterator\ getArtikel()
 comment2.text=\r\n\ \ \ \ /**\r\n\ \ De\ Iterator\ om\ door\ de\ artikelen\ op\ het\ dienblad\ te\ lopen\r\n\ \ @return\ artikelen.iterator()\r\n
 numComments=3

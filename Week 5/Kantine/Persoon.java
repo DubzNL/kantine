@@ -245,19 +245,32 @@ public class Persoon
        return dienblad;
     }
    
+   /**
+    * Methode om betaalwijze op te roepen
+    */
    public Betaalwijze getBetaalwijze(){
        return betaalwijze;
    }
+   
+   /**
+    * Methode om een betaalwijze te koppelen aan persoon
+    */
     
-   public void setBetaalwijze(double saldo){
-       betaalwijze.setSaldo(saldo);
+   public void setBetaalwijze(Betaalwijze betaalwijze){
+       this.betaalwijze = betaalwijze;
    }
     
+   /**
+    * Methode om pinpas op te roepen
+    */
    public Pinpas getPinpas()
    {
        return pinpas;
    }
-    
+   
+   /**
+    * Methode om nieuwe pinpas aan te maken
+    */
    public void newPinpas(int kredietlimiet){
        pinpas = new Pinpas();
        pinpas.setKredietLimiet(kredietlimiet);
