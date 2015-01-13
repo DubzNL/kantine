@@ -209,9 +209,9 @@ public class Persoon
     * Methode om dienblad te koppelen aan een persoon 
     * @param dienblad 
     */ 
-   public void pakDienblad() 
+   public void pakDienblad(Dienblad dienblad) 
    {    
-       this.dienblad = new Dienblad();
+       this.dienblad = dienblad;
    }
      
    /**

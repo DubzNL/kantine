@@ -175,6 +175,26 @@ public class KantineSimulatie
                 persoon = new KantineMedewerker();
             }
         Dienblad dienblad = new Dienblad();
+        persoon.pakDienblad(dienblad);
+        
+        int betaaltype = getRandomValue(0, 1);
+        Betaalwijze betaalwijze;
+            if(betaaltype == 0) {
+                int intSaldo = getRandomValue(500, 2500);
+                double saldo = intSaldo / 100.0;
+                betaalwijze = new Contant();
+            }
+            else if(betaaltype == 1) {
+                int intSaldo = getRandomValue(500, 21054);
+                double saldo = intSaldo / 100.0;
+                int intKredLimiet = getRandomValue(-10000, 0);
+                double kredLimiet = intKredLimiet / 100.0;
+                betaalwijze = new Pinpas();
+            }
+            else {
+                betaalwijze = null;
+            }
+        persoon.setBetaalwijze(betaalwijze);
         return persoon;
     }
     
@@ -197,6 +217,7 @@ public class KantineSimulatie
             personenBinnen[2]++;
         }
     }
+    
     private void printPersoonTotaal()
     {
         System.out.println("Personen die hebben bezocht");

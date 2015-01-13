@@ -37,7 +37,7 @@ public class Dienblad
      *  De Iterator om door de artikelen op het dienblad te lopen
      *  @return artikelen.iterator()
      */
-    public Iterator<Artikel> getArtikelIterator()
+    public Iterator<Artikel> getArtikel()
     {
         return artikelen.iterator();
     }

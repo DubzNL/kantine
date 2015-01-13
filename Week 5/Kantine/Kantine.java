@@ -8,10 +8,10 @@ public class Kantine
 {
    private Kassa kassa;
    private KassaRij kassarij;
-   private Persoon persoon;
+   // private Persoon persoon;
    private KantineAanbod kantineAanbod;
-   private Artikel artikel;
-   private Dienblad dienblad;
+   //private Artikel artikel;
+   //private Dienblad dienblad;
    
     /**
       * Constructor van de klasse kantine
@@ -31,7 +31,7 @@ public class Kantine
    public void loopPakSluitAan(Persoon persoon, String[] artikelnamen)
    {    
        Artikel artikel;
-       Dienblad dienblad = persoon.getDienblad();
+       //dienblad = persoon.getDienblad();
        for(String artikelNaam : artikelnamen)
        {
            artikel = kantineAanbod.getArtikel(artikelNaam);

@@ -11,6 +11,8 @@ public class Kassa
     private int aantalArtikelen;
     private KassaRij kassarij;
     private double hoeveelheidGeld;
+    private Dienblad dienblad;
+    
     /**
      * Constructor
      */
@@ -26,14 +28,15 @@ public class Kassa
      */
     public void rekenAf(Persoon persoon) 
     {
-        Iterator<Artikel> artikelen = persoon.getDienblad().getArtikelIterator();
+        Iterator<Artikel> artikelen = persoon.getDienblad().getArtikel();
         double totaalPrijs = 0;
+        dienblad = persoon.getDienblad();
+        
         while(artikelen.hasNext())
         {
             Artikel artikel = artikelen.next();
             totaalPrijs += artikel.getPrijs();
             aantalArtikelen++;
-
         }
         
         if(persoon instanceof KortingskaartHouder)

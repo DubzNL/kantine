@@ -114,7 +114,7 @@ public class KantineSimulatie
             
             for(int j=0;j<aantalPersonen;j++) {
                 Persoon persoon = new Persoon();
-                persoon.pakDienblad();
+                persoon.pakDienblad(dienblad);
                 int[] tePakken=getRandomArray(AANTAL_ARTIKELEN, 0, AANTAL_ARTIKELEN-1);
                 String[] artikelen=geefArtikelNamen(tePakken);
                 kantine.loopPakSluitAan(persoon, artikelen);
