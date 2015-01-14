@@ -19,7 +19,7 @@ public class Kassa
     public Kassa(KassaRij kassarij) {
         this.kassarij = kassarij;
     } 
-    
+     
     /**
        * vraag het aantal artikelen en de totaalprijs op.
        * De implementatie wordt later vervangen

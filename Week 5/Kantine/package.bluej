@@ -68,6 +68,18 @@ dependency29.type=UsesDependency
 dependency3.from=Persoon
 dependency3.to=Artikel
 dependency3.type=UsesDependency
+dependency30.from=Kassa
+dependency30.to=Dienblad
+dependency30.type=UsesDependency
+dependency31.from=KantineSimulatie
+dependency31.to=Betaalwijze
+dependency31.type=UsesDependency
+dependency32.from=KantineSimulatie
+dependency32.to=Contant
+dependency32.type=UsesDependency
+dependency33.from=KantineSimulatie
+dependency33.to=Pinpas
+dependency33.type=UsesDependency
 dependency4.from=KassaRij
 dependency4.to=Persoon
 dependency4.type=UsesDependency
@@ -87,20 +99,12 @@ dependency9.from=Kassa
 dependency9.to=KassaRij
 dependency9.type=UsesDependency
 objectbench.height=76
-<<<<<<< HEAD
 objectbench.width=1316
 package.editor.height=570
 package.editor.width=1246
 package.editor.x=-8
 package.editor.y=-8
-=======
-objectbench.width=1894
-package.editor.height=864
-package.editor.width=1796
-package.editor.x=-9
-package.editor.y=-9
->>>>>>> aef9ab871ea22248dbb0616ecd850592e8080ad5
-package.numDependencies=29
+package.numDependencies=33
 package.numTargets=17
 package.showExtends=true
 package.showUses=true
@@ -118,17 +122,10 @@ target1.typeParameters=
 target1.width=90
 target1.x=610
 target1.y=620
-<<<<<<< HEAD
-target10.editor.height=744
+target10.editor.height=784
 target10.editor.width=1382
-target10.editor.x=-8
-target10.editor.y=-8
-=======
-target10.editor.height=1050
-target10.editor.width=1932
 target10.editor.x=-9
 target10.editor.y=-9
->>>>>>> aef9ab871ea22248dbb0616ecd850592e8080ad5
 target10.height=50
 target10.name=Persoon
 target10.naviview.expanded=false
@@ -151,17 +148,10 @@ target11.typeParameters=
 target11.width=110
 target11.x=30
 target11.y=150
-<<<<<<< HEAD
 target12.editor.height=784
 target12.editor.width=1382
-target12.editor.x=1286
-target12.editor.y=29
-=======
-target12.editor.height=1050
-target12.editor.width=1938
 target12.editor.x=-9
 target12.editor.y=-9
->>>>>>> aef9ab871ea22248dbb0616ecd850592e8080ad5
 target12.height=50
 target12.name=Pinpas
 target12.naviview.expanded=true
@@ -184,13 +174,8 @@ target13.typeParameters=
 target13.width=100
 target13.x=280
 target13.y=10
-<<<<<<< HEAD
 target14.editor.height=784
 target14.editor.width=1382
-=======
-target14.editor.height=1050
-target14.editor.width=1932
->>>>>>> aef9ab871ea22248dbb0616ecd850592e8080ad5
 target14.editor.x=-9
 target14.editor.y=-9
 target14.height=50
@@ -265,17 +250,10 @@ target3.showInterface=false
 target3.type=ClassTarget
 target3.typeParameters=
 target3.width=140
-<<<<<<< HEAD
-target3.x=180
-target3.y=600
-target4.editor.height=784
-target4.editor.width=1382
-=======
 target3.x=150
 target3.y=560
-target4.editor.height=1050
-target4.editor.width=1938
->>>>>>> aef9ab871ea22248dbb0616ecd850592e8080ad5
+target4.editor.height=784
+target4.editor.width=1382
 target4.editor.x=-9
 target4.editor.y=-9
 target4.height=50
@@ -287,8 +265,8 @@ target4.typeParameters=
 target4.width=80
 target4.x=260
 target4.y=210
-target5.editor.height=1050
-target5.editor.width=1938
+target5.editor.height=784
+target5.editor.width=1382
 target5.editor.x=-9
 target5.editor.y=-9
 target5.height=50

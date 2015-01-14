@@ -17,7 +17,7 @@ public class PersoonsVergelijker
     {
        
     }
-    
+     
     /**
      *  Static methode voor het maken van twee 'identieke' personen
      * 

@@ -12,5 +12,5 @@ public interface KortingskaartHouder
     public boolean heeftMaximum();
     // methode om het maximum kortingsbedrag op te vragen
     public double geefMaximum();
-    public double doeNiks();
+    
 }

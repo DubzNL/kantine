@@ -56,7 +56,7 @@ public class KantineSimulatie
         int[] hoeveelheden=getRandomArray(AANTAL_ARTIKELEN,MIN_ARTIKELEN_PER_SOORT, MAX_ARTIKELEN_PER_SOORT);
         kantine.setKantineAanbod(artikelnamen, artikelprijzen, hoeveelheden);
     }
-    
+     
     /**
      * Methode om een array van random getallen liggend tussen min en max
      * van de gegeven lengte te genereren
@@ -163,7 +163,10 @@ public class KantineSimulatie
             }
         }
     }
-    
+    /**
+     * Methode om persoon te genereren.
+     * 
+     */
      private Persoon genereerPersoon() {
         int kans = getRandomValue(0, 100);
         Persoon persoon;
@@ -197,7 +200,9 @@ public class KantineSimulatie
         persoon.setBetaalwijze(betaalwijze);
         return persoon;
     }
-    
+    /**
+     *  telt het aantal personen per soort
+     */
     private void verwerkPersoon(Persoon persoon)
     {
         
@@ -217,7 +222,9 @@ public class KantineSimulatie
             personenBinnen[2]++;
         }
     }
-    
+    /**
+     *  Geef het aantal personen per soort weer
+     */
     private void printPersoonTotaal()
     {
         System.out.println("Personen die hebben bezocht");
