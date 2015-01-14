@@ -16,11 +16,11 @@ public class Persoon
     private int geboortejaar;
     private char geslacht;
     private Dienblad dienblad;
-    private int aantalArtikelen;
-    private double totaalPrijs;
+    //private int aantalArtikelen;
+    //private double totaalPrijs;
     private Betaalwijze betaalwijze;
-    private Contant contant;
-    private Pinpas pinpas;
+    //private Contant contant;
+    //private Pinpas pinpas;
 
 
     /**
@@ -260,21 +260,17 @@ public class Persoon
        this.betaalwijze = betaalwijze;
    }
     
-   /**
-    * Methode om pinpas op te roepen
-    */
-   public Pinpas getPinpas()
-   {
-       return pinpas;
-   }
+  
    
    /**
     * Methode om nieuwe pinpas aan te maken
     */
+   /*
    public void newPinpas(int kredietlimiet){
        pinpas = new Pinpas();
        pinpas.setKredietLimiet(kredietlimiet);
    }
+   */
 }
         
 

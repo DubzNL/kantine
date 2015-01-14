@@ -13,12 +13,12 @@ public class Kassa
     private double hoeveelheidGeld;
     private Dienblad dienblad;
     
-    /**
-     * Constructor
-     */
-    public Kassa(KassaRij kassarij) {
-        this.kassarij = kassarij;
-    } 
+/**
+ * Constructor
+ */
+public Kassa(KassaRij kassarij){
+    this.kassarij = kassarij;
+} 
      
     /**
        * vraag het aantal artikelen en de totaalprijs op.
@@ -50,25 +50,18 @@ public class Kassa
             totaalPrijs = totaalPrijs - kortingInEuros;
             System.out.println("Deze persoon heeft " + kortingInEuros + " korting gekregen");
         }
-        hoeveelheidGeld += totaalPrijs;
         
         Betaalwijze persoonBetaalwijze = persoon.getBetaalwijze();
-        if (persoonBetaalwijze instanceof Pinpas){
-            if(persoonBetaalwijze.betaal(totaalPrijs)){
-                hoeveelheidGeld += totaalPrijs;
-                System.out.println("Betaald");
-            }
-            else {
-                System.out.println("Sorry, geen kredietlimiet gevonden");
-                System.out.println(persoonBetaalwijze.getSaldo());
-            }
+        try 
+        {
+            persoonBetaalwijze.betaal(totaalPrijs);
+            hoeveelheidGeld += totaalPrijs;
+            System.out.println("Betaald");
+            
         }
-        else{
-            if (persoonBetaalwijze.betaal(totaalPrijs)){
-                hoeveelheidGeld += totaalPrijs;
-            } else {
-                System.out.println("Niet genoeg geld");
-            }    
+        catch(TeWeinigGeldException e)
+        {
+            System.out.println("Niet genoeg geld");
         }
     }
     
