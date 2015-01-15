@@ -16,10 +16,10 @@ public class Kassa
     /**
      * Constructor
      */
-    public Kassa(KassaRij kassarij) {
+    public Kassa(KassaRij kassarij){
         this.kassarij = kassarij;
     } 
-    
+     
     /**
        * vraag het aantal artikelen en de totaalprijs op.
        * De implementatie wordt later vervangen
@@ -50,27 +50,30 @@ public class Kassa
             totaalPrijs = totaalPrijs - kortingInEuros;
             System.out.println("Deze persoon heeft " + kortingInEuros + " korting gekregen");
         }
-        hoeveelheidGeld += totaalPrijs;
-        
-        Betaalwijze persoonBetaalwijze = persoon.getBetaalwijze();
-        if (persoonBetaalwijze instanceof Pinpas){
-            if(persoonBetaalwijze.betaal(totaalPrijs)){
+        if(persoon.getBetaalwijze() != null)
+        {
+            Betaalwijze persoonBetaalwijze = persoon.getBetaalwijze();
+            try 
+            {
+                persoonBetaalwijze.betaal(totaalPrijs);
                 hoeveelheidGeld += totaalPrijs;
-                System.out.println("Betaald");
+                System.out.println("Persoon:");
+                System.out.println(persoon.getVoornaam() + " " + persoon.getAchternaam() + " Heeft succesvol een betaling afgerond.");
+                System.out.println(" ");
             }
-            else {
-                System.out.println("Sorry, geen kredietlimiet gevonden");
-                System.out.println(persoonBetaalwijze.getSaldo());
-            }
+            catch(TeWeinigGeldException teweiniggeld)
+            {
+                System.out.println("Persoon:");
+                System.out.println(persoon.getVoornaam() + " " + persoon.getAchternaam() + " kan niet afrekenen, niet genoeg geld:");
+                System.out.println(" ");
+            } 
         }
-        else{
-            if (persoonBetaalwijze.betaal(totaalPrijs)){
-                hoeveelheidGeld += totaalPrijs;
-            } else {
-                System.out.println("Niet genoeg geld");
-            }    
-        }
-    }
+        else 
+        {
+            System.out.println("Deze persoon heeft geen betaalwijze!");
+        }   
+    } 
+    
     
     /**
        * Geeft het aantal artikelen dat de kassa

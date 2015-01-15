@@ -15,6 +15,7 @@ public class Student extends Persoon
      */
       public Student(String studentNummer, String studieRichting, String BurgerServiceNummer, String voornaam, String achternaam, int geboortedag, int geboortemaand, int geboortejaar, char geslacht, int bsn)
     {
+        super(voornaam, achternaam, geboortedag, geboortemaand, geboortejaar, geslacht, bsn);
         this.studentNummer = studentNummer;
         this.studieRichting = studieRichting;
     }

@@ -16,7 +16,10 @@ public abstract class Betaalwijze
     public void setSaldo(double saldo){
         this.saldo = saldo;
     }
-    
+     
+    /** 
+     * Getter methode om het saldo op te vragen
+     */
     public double getSaldo(){
         return saldo;
     }
@@ -24,7 +27,6 @@ public abstract class Betaalwijze
     /**
      * Methode om betaling af te handelen
      * @param tebetalen
-     * @return Boolean om te kijken of er voldoende saldo is
      */
-    public abstract boolean betaal(double tebetalen);
+    public abstract void betaal(double tebetalen) throws TeWeinigGeldException;
 }
