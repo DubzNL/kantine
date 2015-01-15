@@ -208,7 +208,7 @@ public class Persoon
     }
     
     /**
-     * Get functie voor de voornaam van de persoon
+     * Get functie voor de achternaam van de persoon op te vragen
      */
     public String getAchternaam()
     {

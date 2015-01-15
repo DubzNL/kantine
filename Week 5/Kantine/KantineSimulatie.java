@@ -171,11 +171,11 @@ public class KantineSimulatie
         int kans = getRandomValue(0, 100);
         Persoon persoon;
             if(kans <= STUDENT_KANS) {
-                persoon = new Student();
+                persoon = new Student("2309", "HBO", "BSNnr2332", "Student", "AchternaamStudent", getRandomValue(1, 30), getRandomValue(1,12),getRandomValue(1950,2010), 'o', 01 );
             } else if (kans <= (STUDENT_KANS + DOCENT_KANS)) {
-                persoon = new Docent();
+                persoon = new Docent("Dc","docent",1,"docent","docentAchternaam",1,2,2001,'o');
             } else {
-                persoon = new KantineMedewerker();
+                persoon = new KantineMedewerker(false, 1,"kantineMedewerker","KMachternaam",2,3,1999,'o');
             }
         Dienblad dienblad = new Dienblad();
         persoon.pakDienblad(dienblad);
@@ -183,16 +183,17 @@ public class KantineSimulatie
         int betaaltype = getRandomValue(0, 1);
         Betaalwijze betaalwijze;
             if(betaaltype == 0) {
-                int intSaldo = getRandomValue(500, 2500);
-                double saldo = intSaldo / 100.0;
                 betaalwijze = new Contant();
+                betaalwijze.setSaldo(1000);
             }
             else if(betaaltype == 1) {
-                int intSaldo = getRandomValue(500, 21054);
-                double saldo = intSaldo / 100.0;
-                int intKredLimiet = getRandomValue(-10000, 0);
-                double kredLimiet = intKredLimiet / 100.0;
                 betaalwijze = new Pinpas();
+                betaalwijze.setSaldo(1000);
+                Pinpas pinpas = (Pinpas) betaalwijze;
+                if (getRandomValue(0,5) == 2)
+                {
+                    pinpas.setKredietLimiet(getRandomValue(0,200));
+                }
             }
             else {
                 betaalwijze = null;

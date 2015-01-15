@@ -13,12 +13,12 @@ public class Kassa
     private double hoeveelheidGeld;
     private Dienblad dienblad;
     
-/**
- * Constructor
- */
-public Kassa(KassaRij kassarij){
-    this.kassarij = kassarij;
-} 
+    /**
+     * Constructor
+     */
+    public Kassa(KassaRij kassarij){
+        this.kassarij = kassarij;
+    } 
      
     /**
        * vraag het aantal artikelen en de totaalprijs op.
@@ -50,20 +50,30 @@ public Kassa(KassaRij kassarij){
             totaalPrijs = totaalPrijs - kortingInEuros;
             System.out.println("Deze persoon heeft " + kortingInEuros + " korting gekregen");
         }
-        
-        Betaalwijze persoonBetaalwijze = persoon.getBetaalwijze();
-        try 
+        if(persoon.getBetaalwijze() != null)
         {
-            persoonBetaalwijze.betaal(totaalPrijs);
-            hoeveelheidGeld += totaalPrijs;
-            System.out.println("Betaald");
-            
+            Betaalwijze persoonBetaalwijze = persoon.getBetaalwijze();
+            try 
+            {
+                persoonBetaalwijze.betaal(totaalPrijs);
+                hoeveelheidGeld += totaalPrijs;
+                System.out.println("Persoon:");
+                System.out.println(persoon.getVoornaam() + " " + persoon.getAchternaam() + " Heeft succesvol een betaling afgerond.");
+                System.out.println(" ");
+            }
+            catch(TeWeinigGeldException teweiniggeld)
+            {
+                System.out.println("Persoon:");
+                System.out.println(persoon.getVoornaam() + " " + persoon.getAchternaam() + " kan niet afrekenen, niet genoeg geld:");
+                System.out.println(" ");
+            } 
         }
-        catch(TeWeinigGeldException e)
+        else 
         {
-            System.out.println("Niet genoeg geld");
-        }
-    }
+            System.out.println("Deze persoon heeft geen betaalwijze!");
+        }   
+    } 
+    
     
     /**
        * Geeft het aantal artikelen dat de kassa

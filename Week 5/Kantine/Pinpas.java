@@ -21,12 +21,13 @@ public class Pinpas extends Betaalwijze
      * Methode om betaling af te handelen
      */
     public void betaal(double tebetalen)throws TeWeinigGeldException{
-        if(kredietlimiet <= saldo - tebetalen){
+        if((kredietlimiet + saldo) < tebetalen){
+            throw new TeWeinigGeldException("Te weinig geld op pinpas!");
+        }
+        else{
             saldo -= tebetalen;
-            
         }
-        else {
-            throw new TeWeinigGeldException("Te weinig geld!");
-        }
+        
+        
     }
 }
