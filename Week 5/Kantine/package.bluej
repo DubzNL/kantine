@@ -68,42 +68,21 @@ dependency29.type=UsesDependency
 dependency3.from=Persoon
 dependency3.to=Artikel
 dependency3.type=UsesDependency
-<<<<<<< HEAD
 dependency30.from=KantineSimulatie
 dependency30.to=Contant
 dependency30.type=UsesDependency
-dependency31.from=Persoon
-dependency31.to=Contant
+dependency31.from=Betaalwijze
+dependency31.to=TeWeinigGeldException
 dependency31.type=UsesDependency
-dependency32.from=Persoon
-dependency32.to=Pinpas
+dependency32.from=Contant
+dependency32.to=TeWeinigGeldException
 dependency32.type=UsesDependency
-=======
-dependency30.from=Kassa
-dependency30.to=Dienblad
-dependency30.type=UsesDependency
-dependency31.from=KantineSimulatie
-dependency31.to=Betaalwijze
-dependency31.type=UsesDependency
-dependency32.from=KantineSimulatie
-dependency32.to=Contant
-dependency32.type=UsesDependency
-dependency33.from=KantineSimulatie
-dependency33.to=Pinpas
+dependency33.from=Pinpas
+dependency33.to=TeWeinigGeldException
 dependency33.type=UsesDependency
-dependency34.from=Betaalwijze
+dependency34.from=Kassa
 dependency34.to=TeWeinigGeldException
 dependency34.type=UsesDependency
-dependency35.from=Contant
-dependency35.to=TeWeinigGeldException
-dependency35.type=UsesDependency
-dependency36.from=Pinpas
-dependency36.to=TeWeinigGeldException
-dependency36.type=UsesDependency
-dependency37.from=Kassa
-dependency37.to=TeWeinigGeldException
-dependency37.type=UsesDependency
->>>>>>> d7d6c61fa9037ad3bf1ba0118ad319afe13e5592
 dependency4.from=KassaRij
 dependency4.to=Persoon
 dependency4.type=UsesDependency
@@ -122,29 +101,13 @@ dependency8.type=UsesDependency
 dependency9.from=Kassa
 dependency9.to=KassaRij
 dependency9.type=UsesDependency
-<<<<<<< HEAD
-objectbench.height=76
+objectbench.height=100
 objectbench.width=1900
-package.editor.height=864
+package.editor.height=840
 package.editor.width=1802
 package.editor.x=-9
 package.editor.y=-9
-package.numDependencies=32
-package.numTargets=17
-package.showExtends=true
-package.showUses=true
-project.charset=UTF-8
-target1.editor.height=1032
-target1.editor.width=960
-target1.editor.x=960
-=======
-objectbench.height=100
-objectbench.width=1316
-package.editor.height=546
-package.editor.width=1246
-package.editor.x=-8
-package.editor.y=-8
-package.numDependencies=37
+package.numDependencies=34
 package.numTargets=18
 package.showExtends=true
 package.showUses=true
@@ -152,7 +115,6 @@ project.charset=UTF-8
 target1.editor.height=728
 target1.editor.width=683
 target1.editor.x=683
->>>>>>> d7d6c61fa9037ad3bf1ba0118ad319afe13e5592
 target1.editor.y=0
 target1.height=50
 target1.name=Betaalwijze
@@ -163,17 +125,10 @@ target1.typeParameters=
 target1.width=90
 target1.x=750
 target1.y=620
-<<<<<<< HEAD
-target10.editor.height=1032
-target10.editor.width=960
-target10.editor.x=960
-target10.editor.y=0
-=======
 target10.editor.height=784
 target10.editor.width=1382
 target10.editor.x=-9
 target10.editor.y=-9
->>>>>>> d7d6c61fa9037ad3bf1ba0118ad319afe13e5592
 target10.height=50
 target10.name=Persoon
 target10.naviview.expanded=false
@@ -196,17 +151,10 @@ target11.typeParameters=
 target11.width=110
 target11.x=30
 target11.y=150
-<<<<<<< HEAD
-target12.editor.height=1032
-target12.editor.width=960
-target12.editor.x=0
-target12.editor.y=0
-=======
 target12.editor.height=744
 target12.editor.width=1382
 target12.editor.x=-8
 target12.editor.y=-8
->>>>>>> d7d6c61fa9037ad3bf1ba0118ad319afe13e5592
 target12.height=50
 target12.name=Pinpas
 target12.naviview.expanded=true
@@ -214,11 +162,7 @@ target12.showInterface=false
 target12.type=ClassTarget
 target12.typeParameters=
 target12.width=80
-<<<<<<< HEAD
-target12.x=750
-=======
 target12.x=620
->>>>>>> d7d6c61fa9037ad3bf1ba0118ad319afe13e5592
 target12.y=510
 target13.editor.height=744
 target13.editor.width=1382
@@ -233,17 +177,10 @@ target13.typeParameters=
 target13.width=100
 target13.x=280
 target13.y=10
-<<<<<<< HEAD
-target14.editor.height=1032
-target14.editor.width=1920
-target14.editor.x=0
-target14.editor.y=0
-=======
 target14.editor.height=784
 target14.editor.width=1382
 target14.editor.x=-9
 target14.editor.y=-9
->>>>>>> d7d6c61fa9037ad3bf1ba0118ad319afe13e5592
 target14.height=50
 target14.name=Kantine
 target14.naviview.expanded=false
@@ -253,15 +190,9 @@ target14.typeParameters=
 target14.width=80
 target14.x=670
 target14.y=40
-<<<<<<< HEAD
-target15.editor.height=1032
-target15.editor.width=960
-target15.editor.x=960
-=======
 target15.editor.height=728
 target15.editor.width=683
 target15.editor.x=683
->>>>>>> d7d6c61fa9037ad3bf1ba0118ad319afe13e5592
 target15.editor.y=0
 target15.height=50
 target15.name=TeWeinigGeldException
@@ -269,15 +200,9 @@ target15.naviview.expanded=false
 target15.showInterface=false
 target15.type=ClassTarget
 target15.typeParameters=
-<<<<<<< HEAD
-target15.width=80
-target15.x=750
-target15.y=720
-=======
 target15.width=160
-target15.x=930
-target15.y=570
->>>>>>> d7d6c61fa9037ad3bf1ba0118ad319afe13e5592
+target15.x=1000
+target15.y=560
 target16.editor.height=728
 target16.editor.width=683
 target16.editor.x=683
@@ -302,14 +227,6 @@ target17.showInterface=false
 target17.type=ClassTarget
 target17.typeParameters=
 target17.width=80
-<<<<<<< HEAD
-target17.x=480
-target17.y=360
-target2.editor.height=700
-target2.editor.width=900
-target2.editor.x=32
-target2.editor.y=12
-=======
 target17.x=780
 target17.y=130
 target18.editor.height=784
@@ -323,13 +240,12 @@ target18.showInterface=false
 target18.type=ClassTarget
 target18.typeParameters=
 target18.width=80
-target18.x=500
-target18.y=330
+target18.x=520
+target18.y=360
 target2.editor.height=728
 target2.editor.width=683
 target2.editor.x=683
 target2.editor.y=0
->>>>>>> d7d6c61fa9037ad3bf1ba0118ad319afe13e5592
 target2.height=50
 target2.name=KortingskaartHouder
 target2.naviview.expanded=false
@@ -339,17 +255,10 @@ target2.typeParameters=
 target2.width=140
 target2.x=130
 target2.y=750
-<<<<<<< HEAD
-target3.editor.height=1032
-target3.editor.width=1918
-target3.editor.x=1
-target3.editor.y=0
-=======
 target3.editor.height=744
 target3.editor.width=1382
 target3.editor.x=-8
 target3.editor.y=-8
->>>>>>> d7d6c61fa9037ad3bf1ba0118ad319afe13e5592
 target3.height=50
 target3.name=KantineMedewerker
 target3.naviview.expanded=false
@@ -359,17 +268,10 @@ target3.typeParameters=
 target3.width=140
 target3.x=150
 target3.y=560
-<<<<<<< HEAD
-target4.editor.height=1032
-target4.editor.width=1920
-target4.editor.x=0
-target4.editor.y=0
-=======
 target4.editor.height=744
 target4.editor.width=1382
 target4.editor.x=-8
 target4.editor.y=-8
->>>>>>> d7d6c61fa9037ad3bf1ba0118ad319afe13e5592
 target4.height=50
 target4.name=Kassa
 target4.naviview.expanded=false
@@ -379,17 +281,10 @@ target4.typeParameters=
 target4.width=80
 target4.x=260
 target4.y=210
-<<<<<<< HEAD
-target5.editor.height=1032
-target5.editor.width=1920
-target5.editor.x=0
-target5.editor.y=0
-=======
-target5.editor.height=744
-target5.editor.width=1382
-target5.editor.x=-8
-target5.editor.y=-8
->>>>>>> d7d6c61fa9037ad3bf1ba0118ad319afe13e5592
+target5.editor.height=1050
+target5.editor.width=1938
+target5.editor.x=-9
+target5.editor.y=-9
 target5.height=50
 target5.name=KantineSimulatie
 target5.naviview.expanded=false
@@ -423,7 +318,7 @@ target7.showInterface=false
 target7.type=ClassTarget
 target7.typeParameters=
 target7.width=80
-target7.x=540
+target7.x=590
 target7.y=270
 target8.editor.height=1050
 target8.editor.width=1938
@@ -436,21 +331,12 @@ target8.showInterface=false
 target8.type=ClassTarget
 target8.typeParameters=
 target8.width=140
-<<<<<<< HEAD
-target8.x=810
-target8.y=40
-target9.editor.height=728
-target9.editor.width=683
-target9.editor.x=0
-target9.editor.y=0
-=======
 target8.x=830
 target8.y=330
 target9.editor.height=744
 target9.editor.width=1382
 target9.editor.x=-8
 target9.editor.y=-8
->>>>>>> d7d6c61fa9037ad3bf1ba0118ad319afe13e5592
 target9.height=50
 target9.name=Student
 target9.naviview.expanded=false
