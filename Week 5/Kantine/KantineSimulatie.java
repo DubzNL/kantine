@@ -19,13 +19,13 @@ public class KantineSimulatie
     private Random random;
     
     // aantal artikelen
-    private static final int AANTAL_ARTIKELEN=4;
+    private int aantal_artikelen;
     
-    // artikelen
-    private static final String[] artikelnamen = new String[] {"Koffie", "Broodje pindakaas", "Broodje kaas", "Appelsap"};
+   // artikelen
+    private String[] artikelnamen;
     
     // prijzen
-    private static double[] artikelprijzen= new double[]{1.50, 2.10, 1.65, 1.65};
+    private Double[] artikelprijzen;
     
     // minimum en maximum aantal artikelen per soort
     private static final int MIN_ARTIKELEN_PER_SOORT=10000;
@@ -53,8 +53,8 @@ public class KantineSimulatie
     public KantineSimulatie(){
         kantine=new Kantine();
         random=new Random();
-        int[] hoeveelheden=getRandomArray(AANTAL_ARTIKELEN,MIN_ARTIKELEN_PER_SOORT, MAX_ARTIKELEN_PER_SOORT);
-        kantine.setKantineAanbod(artikelnamen, artikelprijzen, hoeveelheden);
+        aantal_artikelen = 0;
+        int[] hoeveelheden=getRandomArray(aantal_artikelen,MIN_ARTIKELEN_PER_SOORT, MAX_ARTIKELEN_PER_SOORT);
     }
      
     /**
@@ -87,18 +87,17 @@ public class KantineSimulatie
     }
     
     /**
-     * Methode om op basis van een array van indexen voor de array
-     * artikelnamen de bijhorende array van artikelnamen te maken
-     * @param indexen
-     * @return De array met artikelnamen
-     */
-    
-    private String[] geefArtikelNamen(int[] indexen){
-        String[] artikelen=new String[indexen.length];
-        for(int i=0; i<indexen.length; i++){
-            artikelen[i]= artikelnamen[indexen[i]];
+    * Methode om op basis van een array van indexen voor de array
+    * artikelnamen de bijhorende array van artikelnamen te maken
+    * @param indexen
+    * @return De array met artikelnamen
+    */
+    private String[] geefArtikelNamen(int[] indexen) {
+    String[] artikelen = new String[indexen.length];
+        for(int i = 0; i < indexen.length; i++) {
+            artikelen[i] = artikelnamen.get(indexen[i]);
         }
-        return artikelen;
+    return artikelen;
     }
     
     /**
@@ -107,8 +106,7 @@ public class KantineSimulatie
      * @param dagen
      */
     
-    public void simuleer(int dagen) 
-    {
+    public void simuleer(int dagen) throws TeWeinigGeldException {
         
         //array met aantal artikelen per dag.
         int[] aantal = new int[dagen];
@@ -116,16 +114,18 @@ public class KantineSimulatie
         double[] omzet = new double[dagen];
         DecimalFormat df = new DecimalFormat("#.##");
         
+        this.kantineaanbod = new KantineAanbod(artikelnamen, artikelprijzen, 5);
+        kantine.setKanitneAanbod();
+        
         for(int i=0;i<dagen;i++) {
             int aantalPersonen= getRandomValue(MIN_PERSONEN_PER_DAG, MAX_PERSONEN_PER_DAG);
             personenBinnen = new int[namenVanKlassen.length];
             for(int j=0;j<aantalPersonen;j++) {
                 Persoon persoon = genereerPersoon();
                 verwerkPersoon(persoon);
-                int[] tePakken=getRandomArray(AANTAL_ARTIKELEN, 0, AANTAL_ARTIKELEN-1);
+                int[] tePakken=getRandomArray(aantal_artikelen, 0, aantal_artikelen-1);
                 String[] artikelen=geefArtikelNamen(tePakken);
                 kantine.loopPakSluitAan(persoon, artikelen);
-                updateArtikelVoorraad(artikelen);
             }
             printPersoonTotaal();
             kantine.verwerkRijVoorKassa();
@@ -163,9 +163,9 @@ public class KantineSimulatie
             }
         }
     }
+    
     /**
      * Methode om persoon te genereren.
-     * 
      */
      private Persoon genereerPersoon() {
         int kans = getRandomValue(0, 100);
@@ -201,6 +201,7 @@ public class KantineSimulatie
         persoon.setBetaalwijze(betaalwijze);
         return persoon;
     }
+    
     /**
      *  telt het aantal personen per soort
      */
@@ -223,6 +224,7 @@ public class KantineSimulatie
             personenBinnen[2]++;
         }
     }
+    
     /**
      *  Geef het aantal personen per soort weer
      */
@@ -233,5 +235,15 @@ public class KantineSimulatie
         {
             System.out.println(namenVanKlassen[i] + ": " + personenBinnen[i]);
         }
+    }
+
+    /**
+     * Methode om artikelen toe te voegen;
+     * @param artikel
+     */
+    public void addArtikel(String artikelNaam, double prijs){
+        artikelnamen.add(aantal_artikelen, artikelNaam);
+        artikelprijzen.add(aantal_artikelen, prijs);
+        aantal_artikelen = aantal_artikelen + 1;
     }
 }
