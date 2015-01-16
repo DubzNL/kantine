@@ -34,6 +34,10 @@ public class Kantine
        //dienblad = persoon.getDienblad();
        for(String artikelNaam : artikelnamen)
        {
+           if(kantineAanbod == null)
+           {
+               System.err.println("geen kantineaanbod");
+            }
            artikel = kantineAanbod.getArtikel(artikelNaam);
            persoon.getDienblad().voegToe(artikel);
        }

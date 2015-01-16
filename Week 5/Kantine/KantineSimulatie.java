@@ -19,10 +19,13 @@ public class KantineSimulatie
     private Random random;
     
     // aantal artikelen
-    private static final int AANTAL_ARTIKELEN=4;
+    private int aantal_artikelen;
     
-    // artikelen
-    private ArrayList<Artikel> artikelArrayList = new ArrayList<Artikel>();
+   // artikelen
+    private String[] artikelnamen;
+    
+    // prijzen
+    private Double[] artikelprijzen;
     
     // minimum en maximum aantal artikelen per soort
     private static final int MIN_ARTIKELEN_PER_SOORT=10000;
@@ -50,7 +53,8 @@ public class KantineSimulatie
     public KantineSimulatie(){
         kantine=new Kantine();
         random=new Random();
-        int[] hoeveelheden=getRandomArray(AANTAL_ARTIKELEN,MIN_ARTIKELEN_PER_SOORT, MAX_ARTIKELEN_PER_SOORT);
+        aantal_artikelen = 0;
+        int[] hoeveelheden=getRandomArray(aantal_artikelen,MIN_ARTIKELEN_PER_SOORT, MAX_ARTIKELEN_PER_SOORT);
     }
      
     /**
@@ -83,24 +87,17 @@ public class KantineSimulatie
     }
     
     /**
-     * Methode om op basis van een array van indexen voor de array
-     * artikelnamen de bijhorende array van artikelnamen te maken
-     * @param indexen
-     * @return De array met artikelnamen
-     */
-    
+    * Methode om op basis van een array van indexen voor de array
+    * artikelnamen de bijhorende array van artikelnamen te maken
+    * @param indexen
+    * @return De array met artikelnamen
+    */
     private String[] geefArtikelNamen(int[] indexen) {
-        int aantalGemaakteArtikelen = artikelArrayList.size();
-        String[] artikelnamen = new String[aantalGemaakteArtikelen];
-        for(int i = 0; i < aantalGemaakteArtikelen; i++){
-            artikelnamen[i] = artikelArrayList.get(i).getNaam();
+    String[] artikelen = new String[indexen.length];
+        for(int i = 0; i < indexen.length; i++) {
+            artikelen[i] = artikelnamen.get(indexen[i]);
         }
-
-        String[] artikelen=new String[indexen.length];
-        for(int i = 0; i < 0; i++) { 
-            artikelen[i]= artikelnamen[indexen[i]];
-        }
-        return artikelnamen;
+    return artikelen;
     }
     
     /**
@@ -117,16 +114,18 @@ public class KantineSimulatie
         double[] omzet = new double[dagen];
         DecimalFormat df = new DecimalFormat("#.##");
         
+        this.kantineaanbod = new KantineAanbod(artikelnamen, artikelprijzen, 5);
+        kantine.setKanitneAanbod();
+        
         for(int i=0;i<dagen;i++) {
             int aantalPersonen= getRandomValue(MIN_PERSONEN_PER_DAG, MAX_PERSONEN_PER_DAG);
             personenBinnen = new int[namenVanKlassen.length];
             for(int j=0;j<aantalPersonen;j++) {
                 Persoon persoon = genereerPersoon();
                 verwerkPersoon(persoon);
-                int[] tePakken=getRandomArray(AANTAL_ARTIKELEN, 0, AANTAL_ARTIKELEN-1);
+                int[] tePakken=getRandomArray(aantal_artikelen, 0, aantal_artikelen-1);
                 String[] artikelen=geefArtikelNamen(tePakken);
                 kantine.loopPakSluitAan(persoon, artikelen);
-                updateArtikelVoorraad(artikelen);
             }
             printPersoonTotaal();
             kantine.verwerkRijVoorKassa();
@@ -164,9 +163,9 @@ public class KantineSimulatie
             }
         }
     }
+    
     /**
      * Methode om persoon te genereren.
-     * 
      */
      private Persoon genereerPersoon() {
         int kans = getRandomValue(0, 100);
@@ -202,6 +201,7 @@ public class KantineSimulatie
         persoon.setBetaalwijze(betaalwijze);
         return persoon;
     }
+    
     /**
      *  telt het aantal personen per soort
      */
@@ -224,6 +224,7 @@ public class KantineSimulatie
             personenBinnen[2]++;
         }
     }
+    
     /**
      *  Geef het aantal personen per soort weer
      */
@@ -235,45 +236,14 @@ public class KantineSimulatie
             System.out.println(namenVanKlassen[i] + ": " + personenBinnen[i]);
         }
     }
-    
-    /**
-     * Methode om artikelen toe te voegen
-     */
-    public void voegArtikelToe(String naam, double prijs){
-        artikelArrayList.add(new Artikel(naam, prijs));
-    }
-    
-    /**
-     * Methode om artikelen die toegevoegd zijn af te drukken
-     */
-    public void drukArtikelenAf(){
-        if(artikelArrayList.size() > 0){
-            System.out.println("De kantine verkoopt de volgende producten:");
-            for(int i = 0; i < artikelArrayList.size(); i++){
-                System.out.println("- " + artikelArrayList.get(i).getNaam());
-            }
-        } else {
-            System.out.println("Er zijn geen artikelen toegevoegd");
-        }
-    }
-    
-    /**
-     * Deze methode maakt een array met artikelen aan
-     * @return Array met artikelen
-     */
-    private String[] maakArtikelArray(){                
-        // bedenk hoeveel artikelen worden gepakt
-        int aantalartikelen = getRandomValue(MIN_ARTIKELEN_PER_PERSOON, MAX_ARTIKELEN_PER_PERSOON);
 
-        // genereer de “artikelnummers”, dit zijn indexen 
-        // van de artikelnamen array  
-        int aantalGemaakteArtikelen = artikelArrayList.size();
-        int[] tepakken=getRandomArray(aantalartikelen, 0, aantalGemaakteArtikelen-1);
-
-        // vind de artikelnamen op basis van 
-        // de indexen hierboven
-        String[] artikelen=geefArtikelNamen(tepakken);
-
-        return artikelen;
+    /**
+     * Methode om artikelen toe te voegen;
+     * @param artikel
+     */
+    public void addArtikel(String artikelNaam, double prijs){
+        artikelnamen.add(aantal_artikelen, artikelNaam);
+        artikelprijzen.add(aantal_artikelen, prijs);
+        aantal_artikelen = aantal_artikelen + 1;
     }
 }
