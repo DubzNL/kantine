@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=saldo
+comment0.target=void\ setSaldo(double)
+comment0.text=\r\n\ Methode\ om\ krediet\ te\ initialiseren\r\n\ @param\ krediet\r\n
+comment1.params=
+comment1.target=double\ getSaldo()
+comment1.text=\ \r\n\ Getter\ methode\ om\ het\ saldo\ op\ te\ vragen\r\n
+comment2.params=tebetalen
+comment2.target=void\ betaal(double)
+comment2.text=\r\n\ Methode\ om\ betaling\ af\ te\ handelen\r\n\ @param\ tebetalen\r\n
+numComments=3
