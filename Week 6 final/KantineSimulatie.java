@@ -70,7 +70,6 @@ public class KantineSimulatie
     public KantineSimulatie(){
         kantine=new Kantine();
         random=new Random();
-        //int[] hoeveelheden=getRandomArray(AANTAL_A,MIN_ARTIKELEN_PER_SOORT, MAX_ARTIKELEN_PER_SOORT);
         
     }
      
@@ -220,11 +219,11 @@ public class KantineSimulatie
         Betaalwijze betaalwijze;
             if(betaaltype == 0) {
                 betaalwijze = new Contant();
-                betaalwijze.setSaldo(1000);
+                betaalwijze.setSaldo(500);
             }
             else if(betaaltype == 1) {
                 betaalwijze = new Pinpas();
-                betaalwijze.setSaldo(1000);
+                betaalwijze.setSaldo(500);
                 Pinpas pinpas = (Pinpas) betaalwijze;
                 if (getRandomValue(0,5) == 2)
                 {
